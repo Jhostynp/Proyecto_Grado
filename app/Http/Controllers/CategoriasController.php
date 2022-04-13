@@ -1,23 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
+Use App\Categorias;
 use Illuminate\Http\Request;
 
-class UsuariosController extends Controller
+class CategoriasController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        ///carpeta.archivo
-        $usuarios=User::all();
-        return view('usuarios.index')
-        ->with('users',$usuarios)
-        ;
+    public function index()
+    {
 
+                    $categorias=Categorias::all();
+                       return view('categorias.index')
+                       ->with('categorias',$categorias);
     }
 
     /**
@@ -27,7 +26,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        return view('usuarios.create');
+        return view('categorias.create');
     }
 
     /**
@@ -39,8 +38,8 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
         $data=$request->all();
-        User::create($data);
-        return redirect(route("usuarios"));
+        Categorias::create($data);
+        return redirect(route("categorias"));
     }
 
     /**
@@ -63,9 +62,11 @@ class UsuariosController extends Controller
     public function edit($id)
     {
         //
-        $usuarios=User::find($id);
-        return view('usuarios.edit')
-        ->with('usuarios',$usuarios);
+        $categoria=Categorias::find($id);
+        return view('categorias.edit')
+        ->with('categoria',$categoria);
+
+
     }
 
     /**
@@ -77,10 +78,12 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $us=User::find($id);
-         $us->update($request->all());
-         return redirect(route("usuarios"));
+
+         $c=Categorias::find($id);
+         $c->update($request->all());
+         return redirect(route("categorias"));
+
+
     }
 
     /**
@@ -92,8 +95,8 @@ class UsuariosController extends Controller
     public function destroy($id)
     {
         //
-        User::destroy($id);
-        return redirect(route("usuarios"));
+        Categorias::destroy($id);
+        return redirect(route("categorias"));
         //dd("listo para eliminar");
     }
 }

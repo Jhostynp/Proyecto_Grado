@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoria extends Migration
+class CreateClientes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateCategoria extends Migration
      */
     public function up()
     {
-        Schema::create('categoria', function (Blueprint $table) {
-            $table->id('cat_id');
-            $table->string('cat_nombre');
+        Schema::create('clientes', function (Blueprint $table) {
+            $table->id('cli_id');
+            $table->string('cli_name');
+            $table->string('cli_cedula')->unique();
+            $table->string('cli_telefono');
+            $table->date('cli_fecha');
             $table->timestamps();
+
         });
     }
 
@@ -27,6 +31,6 @@ class CreateCategoria extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categoria');
+        Schema::dropIfExists('clientes');
     }
 }

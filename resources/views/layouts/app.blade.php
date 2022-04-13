@@ -7,25 +7,37 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Control Gasto') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
+    <!-- Fonts -->   
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body class="text-success" >
+<body style="background:#2C3333">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+        <nav class="navbar navbar-expand navbar-light shadow-sm text-white" style="background:#2666CF;" >
+            <div class="container text-white" >
+                
+                @guest
+                    <img src="https://www.pngkit.com/png/full/232-2323280_games-trivia-pin-icon-iconos-de-juegos-png.png" width="70" height="60" alt="">&nbsp;<h5> VENTA DE VIDEOJUEGOS</h5>
+                @else
+                <img src="https://www.pngkit.com/png/full/232-2323280_games-trivia-pin-icon-iconos-de-juegos-png.png" width="80" height="80" class="d-inline-block align-top" alt="">&nbsp;&nbsp;<h5> VENTA DE VIDEOJUEGOS</h5> &nbsp; &nbsp; &nbsp; &nbsp;
+                
+                            <a class="btn btn-default text-white" href="{{route('usuarios')}}">Usuarios</a>
+                            <a class="btn btn-default text-white" href="{{route('categorias')}}">Categoria</a>
+                            <a class="btn btn-default text-white" href="{{route('clientes')}}">Clientes</a>
+
+
+                @endguest
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -37,25 +49,26 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto ">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Registrase') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown ">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img src="https://n9.cl/pq1i0w" width="80px">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" style="background:#FFFFFF; " class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img src="https://c.tenor.com/5wdslJBsaVcAAAAC/ryu-street-fighter.gif" width="100px">&nbsp
+
                                     {{ Auth::user()->usu_name  }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right"  aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right" style="background:#FFFFFF;" aria-labelledby="navbarDropdown">
                                     <div>
                                         <h6 style="text-align: center;font-size: 10pt;font-family: BlackWay;">{{ Auth::user()->usu_nombre }}</h6>
                                     </div>
@@ -63,6 +76,7 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                      <img src="https://cdn-icons-png.flaticon.com/512/35/35702.png" width="15px">
+
                                         Cerrar Session
                                         </a>
 

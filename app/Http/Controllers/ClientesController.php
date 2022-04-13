@@ -1,23 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
+Use App\Clientes;
 use Illuminate\Http\Request;
 
-class UsuariosController extends Controller
+class ClientesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        ///carpeta.archivo
-        $usuarios=User::all();
-        return view('usuarios.index')
-        ->with('users',$usuarios)
-        ;
-
+    public function index()
+    {
+        //
+        $clientes=Clientes::all();
+        return view('clientes.index')
+        ->with('clientes',$clientes);
     }
 
     /**
@@ -27,7 +26,8 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        return view('usuarios.create');
+        //
+        return view('clientes.create');
     }
 
     /**
@@ -38,9 +38,10 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
+        //
         $data=$request->all();
-        User::create($data);
-        return redirect(route("usuarios"));
+        Clientes::create($data);
+        return redirect(route("clientes"));
     }
 
     /**
@@ -63,9 +64,9 @@ class UsuariosController extends Controller
     public function edit($id)
     {
         //
-        $usuarios=User::find($id);
-        return view('usuarios.edit')
-        ->with('usuarios',$usuarios);
+        $clientes=Clientes::find($id);
+        return view('clientes.edit')
+        ->with('clientes',$clientes);
     }
 
     /**
@@ -78,9 +79,9 @@ class UsuariosController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $us=User::find($id);
-         $us->update($request->all());
-         return redirect(route("usuarios"));
+        $clie=Clientes::find($id);
+         $clie->update($request->all());
+         return redirect(route("clientes"));
     }
 
     /**
@@ -92,8 +93,7 @@ class UsuariosController extends Controller
     public function destroy($id)
     {
         //
-        User::destroy($id);
-        return redirect(route("usuarios"));
-        //dd("listo para eliminar");
+                Clientes::destroy($id);
+        return redirect(route("clientes"));
     }
 }
