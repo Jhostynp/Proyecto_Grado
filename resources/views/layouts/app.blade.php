@@ -34,6 +34,7 @@
                             <a class="btn btn-default text-white" href="{{route('usuarios')}}">Usuarios</a>
                             <a class="btn btn-default text-white" href="{{route('categorias')}}">Categoria</a>
                             <a class="btn btn-default text-white" href="{{route('clientes')}}">Clientes</a>
+                <a class="btn btn-default text-white" href="{{route('provedor')}}">Provedor</a>
 
 
                 @endguest

@@ -61,5 +61,14 @@ Route::post('/clientes/update/{cli_id}','ClientesController@update')->name('clie
 Route::post('/clientes/destroy/{cli_id}','ClientesController@destroy')->name('clientes.destroy');
 
 
+Route::get('/provedor','ProvedorController@index')->name('provedor');
 
-Route::post('/clientes/destroy/{cli_id}','ClientesController@destroy')->name('clientes.destroy');
+Route::get('/provedor/create','ProvedorController@create')->name('provedor.create');
+
+Route::post('/provedor/store','ProvedorController@store')->name('provedor.store');
+
+Route::get('/provedor/edit/{prov_id}','ProvedorController@edit')->name('provedor.edit');
+
+Route::post('/provedor/update/{prov_id}','ProvedorController@update')->name('provedor.uptade');
+
+Route::post('/provedor/destroy/{prov_id}','ProvedorController@destroy')->name('provedor.destroy');
