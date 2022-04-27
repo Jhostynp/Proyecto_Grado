@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-
-
 <script src="{{asset('js/categorias.js')}}"> </script>
 
 <div class="container col-md-4" >
@@ -14,10 +12,10 @@
                     
 					<div></div>
 					<label for="">Detalle Categoria:</label>
-				    <input type="text" name="cat_detalle" id="cat_detalle" class="form-control" placeholder="Escriba la categoria que pertenece el videojuego">
+				    <input type="text" name="cat_nombre" id="cat_nombre" class="form-control" placeholder="Escriba la categoria que pertenece el videojuego">
   				</div>
 				<div class="form-group">
-					<button class="btn btn-dark"> Actualizar</button>
+					<button class="btn btn-dark">Guardar</button>
 				</div>
 		</form>
 	</div>

@@ -72,3 +72,19 @@ Route::get('/provedor/edit/{prov_id}','ProvedorController@edit')->name('provedor
 Route::post('/provedor/update/{prov_id}','ProvedorController@update')->name('provedor.uptade');
 
 Route::post('/provedor/destroy/{prov_id}','ProvedorController@destroy')->name('provedor.destroy');
+
+
+
+Route::get('/productos','ProductosController@index')->name('productos');
+
+Route::get('/productos/create','ProductosController@index')->name('productos.create');
+
+Route::get('/productos/store','ProductosController@index')->name('productos.store');
+
+Route::get('/productos/edit/{prov_id}','ProductosController@index')->name('productos.edit');
+
+Route::get('/productos/update/{prov_id}','ProductosController@index')->name('productos.uptade');
+
+Route::get('/productos/destroy/{prov_id}','ProductosController@index')->name('productos.destroy');
+
+Route::post('/productos/search','ProductosController@index')->name('productos.search');  
