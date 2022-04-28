@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 use Auth;
 use DB;
 use App\Productos;
 use App\Categorias;
 use App\Provedor;
-use Illuminate\Http\Request;
+
 
 class ProductosController extends Controller
 {
@@ -24,10 +25,10 @@ class ProductosController extends Controller
         $desde=date('Y-m-d');
         $hasta=date('Y-m-d');
 
-           if (isset($data['desde'])) {
-                $desde=$data['desde'];
-                $hasta=$data['hasta'];
-            }
+           // if (isset($data['desde'])) {
+           //      $desde=$data['desde'];
+           //      $hasta=$data['hasta'];
+           //  }
         
         //
         //$movimientos=Movimientos::all();//Eloquent
@@ -35,7 +36,7 @@ class ProductosController extends Controller
             SELECT * FROM productos p
                 JOIN categorias c ON p.cat_id=c.cat_id 
               JOIN provedor r ON p.prov_id=r.prov_id
-            WHERE p.prod_fecha BETWEEN '$desde' AND '$hasta'
+            -- WHERE p.prod_fecha BETWEEN '$desde' AND '$hasta'
        
             ");  
 
@@ -52,9 +53,9 @@ class ProductosController extends Controller
 
 
         return view('productos.index')
-        ->with('productos',$productos)
-        ->with('desde',$desde)
-        ->with('hasta',$hasta);
+        ->with('productos',$productos);
+        // ->with('desde',$desde)
+        // ->with('hasta',$hasta);
 
 
     }
@@ -67,6 +68,14 @@ class ProductosController extends Controller
     public function create()
     {
         //
+        $categorias=Categorias::all();
+        $provedor=Provedor::all();
+        
+// dd("EDITAR");
+
+        return view('productos.create')
+        ->with('categorias',$categorias)
+        ->with('provedor',$provedor);
     }
 
     /**
@@ -78,6 +87,18 @@ class ProductosController extends Controller
     public function store(Request $request)
     {
         //
+
+        $data=$request->all();
+
+        
+
+
+
+
+         Productos::create($data);
+
+
+        return redirect(route("productos"));
     }
 
     /**

@@ -77,14 +77,14 @@ Route::post('/provedor/destroy/{prov_id}','ProvedorController@destroy')->name('p
 
 Route::get('/productos','ProductosController@index')->name('productos');
 
-Route::get('/productos/create','ProductosController@index')->name('productos.create');
+Route::get('/productos/create','ProductosController@create')->name('productos.create');
 
-Route::get('/productos/store','ProductosController@index')->name('productos.store');
+Route::post('/productos/store','ProductosController@store')->name('productos.store');
 
-Route::get('/productos/edit/{prov_id}','ProductosController@index')->name('productos.edit');
+Route::get('/productos/edit/{prod_id}','ProductosController@edit')->name('productos.edit');
 
-Route::get('/productos/update/{prov_id}','ProductosController@index')->name('productos.uptade');
+Route::get('/productos/update/{prod_id}','ProductosController@update')->name('productos.uptade');
 
-Route::get('/productos/destroy/{prov_id}','ProductosController@index')->name('productos.destroy');
+Route::get('/productos/destroy/{prod_id}','ProductosController@destroy')->name('productos.destroy');
 
 Route::post('/productos/search','ProductosController@index')->name('productos.search');  
