@@ -3,7 +3,9 @@
 
 <div class="container">
 	<div class="col-md-12 text-white">
-		<h1 style="font-family:algeria">Productos
+
+
+		<h1 style="font-family:algeria"> <img src="https://www.vichaunter.org/wp-content/uploads/2017/01/juegos-digitales-vs-copias-fisicas.jpg" width="180x"> Productos
 <a href=" {{route('productos.create')}} " class="btn-primary btn-success btn text-white">Crear</a></h1>
 
 			<!-- <form class="" action="{{route('productos.search')}}" method="POST"> -->
@@ -25,19 +27,26 @@
 
 
 
-	<table class="table table-striped table-success table-sm table-bordered table-hover  ">
+	<table class="table table-striped table-success table-sm table-bordered table-hover table align-middle  ">
+
 		  <thead class="thead-dark">
 		<th style="text-align:center;">#</th>
 		<th style="text-align:center;">Fecha</th>
-		<th style="text-align:center;">Tipo</th>
-		<th style="text-align:center;">Cantidad</th>
-		<th style="text-align:center;">Detalle</th>
+		<th style="text-align:center;">Stock</th>
+		<th style="text-align:center;">Precio</th>
+		<th style="text-align:center;">Descripcion</th>
+
 
 		<th style="text-align:center;">Nombre</th>
 
 		<th style="text-align:center;">Categoria</th>
-		<th style="text-align:center;">Usuario</th>
 
+		<th style="text-align:center;">Provedor</th>
+
+
+
+
+		<th style="text-align:center;"> </th>
 
 		
 @foreach($productos as $prod)
@@ -51,7 +60,10 @@
       			<td style="text-align:center;">{{$prod->prod_stock}}</td>
 
 
-				<td style="text-align:center;">{{$prod->pro_descripcion}}</td>
+      			<td style="text-align:center;">{{$prod->prod_precio}}$</td>
+
+                <td style="text-align:center;">{{$prod->pro_descripcion}}</td>
+
 
 
 				<td style="text-align:center;">{{$prod->pro_nombre}}</td>

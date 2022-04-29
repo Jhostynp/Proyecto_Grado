@@ -3,9 +3,9 @@
 
 <script src="{{asset('js/categorias.js')}}"> </script>
 
-<div class="container col-md-4" >
-<div class="card-body card w-150 text-white bg-light mb-3 text-dark " style="margin-top: 25%;">
-		<h1 style="font-family:algeria;text-align: center-left;"><img src="https://smpuigextraescolares.files.wordpress.com/2015/10/frustracion_videojuegos.png" width="100px"> Nueva Categoria</h1>	 
+<div class="container col-md-6" >
+	<div class="card-body card text-white text-white " style="margin-top: 0%;background:#251D3A;">
+		<h3 style="font-family:algeria;text-align: center;"><img src="https://cdn-icons-png.flaticon.com/512/2422/2422612.png" width="40px"> Nueva Categoria</h1>	 
 		<form action="{{route('categoria.store')}}" method="POST" onsubmit="return validar()">
 			@csrf
 				<div class="form-group">

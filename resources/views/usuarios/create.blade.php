@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <script src="{{asset('js/users.js')}}"> </script>
-<div class="container col-md-4" >
-<div class="card-body card w-150 text-white bg-light mb-3 text-dark " style="margin-top: 5%;">
-        <h3 style="font-family:algeria;text-align: center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1200px-User_icon_2.svg.png" width="60px"> Registro de Usuarios</h3>
+<div class="container col-md-6" >
+    <div class="card-body card text-white text-white " style="margin-top: 0%;background:#251D3A;">
+        <h3 style="font-family:algeria;text-align: center;"><img src="https://cdn-icons-png.flaticon.com/512/2422/2422612.png" width="40px"> Registro de Usuarios</h3>
 <form action="{{route('usuario.store')}}" method="POST" onsubmit="return vali()">
 @csrf
                 <div class="form-group">

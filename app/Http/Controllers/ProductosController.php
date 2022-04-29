@@ -90,13 +90,7 @@ class ProductosController extends Controller
 
         $data=$request->all();
 
-        
-
-
-
-
          Productos::create($data);
-
 
         return redirect(route("productos"));
     }
@@ -121,6 +115,15 @@ class ProductosController extends Controller
     public function edit($id)
     {
         //
+
+        $productos=Productos::find($id);
+        $categorias=Categorias::all();
+        $provedor=Provedor::all();
+        return view('productos.edit')
+        ->with('productos',$productos)
+        ->with('categorias',$categorias)
+        ->with('provedor',$provedor);
+
     }
 
     /**
@@ -133,6 +136,11 @@ class ProductosController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $p=Productos::find($id);
+        $p->update($request->all());
+        return redirect(route("productos"));
+
     }
 
     /**
@@ -144,5 +152,9 @@ class ProductosController extends Controller
     public function destroy($id)
     {
         //
+
+        Productos::destroy($id);
+        return redirect(route("productos"));
+
     }
 }

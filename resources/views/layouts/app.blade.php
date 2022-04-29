@@ -35,8 +35,9 @@
                             <a class="btn btn-default text-white" href="{{route('categorias')}}">Categoria</a>
                             <a class="btn btn-default text-white" href="{{route('clientes')}}">Clientes</a>
                             <a class="btn btn-default text-white" href="{{route('provedor')}}">Provedor</a>
-                            <a class="btn btn-default text-white" href="{{route('productos')}}">PRODUCTOS</a>
-                            <a class="btn btn-default text-white" >VENTAS</a>
+                            <a class="btn btn-default text-white" href="{{route('productos')}}">Productos</a>
+                            <a class="btn btn-default text-white" href="{{route('facturas.index')}}">Facturas</a>
+
 
 
                 @endguest
