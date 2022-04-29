@@ -61,5 +61,30 @@ Route::post('/clientes/update/{cli_id}','ClientesController@update')->name('clie
 Route::post('/clientes/destroy/{cli_id}','ClientesController@destroy')->name('clientes.destroy');
 
 
+Route::get('/provedor','ProvedorController@index')->name('provedor');
 
-Route::post('/clientes/destroy/{cli_id}','ClientesController@destroy')->name('clientes.destroy');
+Route::get('/provedor/create','ProvedorController@create')->name('provedor.create');
+
+Route::post('/provedor/store','ProvedorController@store')->name('provedor.store');
+
+Route::get('/provedor/edit/{prov_id}','ProvedorController@edit')->name('provedor.edit');
+
+Route::post('/provedor/update/{prov_id}','ProvedorController@update')->name('provedor.uptade');
+
+Route::post('/provedor/destroy/{prov_id}','ProvedorController@destroy')->name('provedor.destroy');
+
+
+
+Route::get('/productos','ProductosController@index')->name('productos');
+
+Route::get('/productos/create','ProductosController@create')->name('productos.create');
+
+Route::post('/productos/store','ProductosController@store')->name('productos.store');
+
+Route::get('/productos/edit/{prod_id}','ProductosController@edit')->name('productos.edit');
+
+Route::post('/productos/update/{prod_id}','ProductosController@update')->name('productos.update');
+
+Route::post('/productos/destroy/{prod_id}','ProductosController@destroy')->name('productos.destroy');
+
+Route::post('/productos/search','ProductosController@index')->name('productos.search');  
