@@ -94,3 +94,5 @@ Route::get('/productos/destroy/{prod_id}','ProductosController@destroy')->name('
 >>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
 
 Route::post('/productos/search','ProductosController@index')->name('productos.search');  
+
+Route::resource('facturas','FacturasController');

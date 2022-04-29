@@ -93,15 +93,13 @@ class ProductosController extends Controller
          Productos::create($data);
 =======
 
-        
-
-
-
-
          Productos::create($data);
 
+<<<<<<< HEAD
 
 >>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
+=======
+>>>>>>> 5967af7 (Avances  Factura)
         return redirect(route("productos"));
     }
 
@@ -126,6 +124,10 @@ class ProductosController extends Controller
     {
         //
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5967af7 (Avances  Factura)
         $productos=Productos::find($id);
         $categorias=Categorias::all();
         $provedor=Provedor::all();
@@ -133,8 +135,12 @@ class ProductosController extends Controller
         ->with('productos',$productos)
         ->with('categorias',$categorias)
         ->with('provedor',$provedor);
+<<<<<<< HEAD
 =======
 >>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
+=======
+
+>>>>>>> 5967af7 (Avances  Factura)
     }
 
     /**
@@ -148,11 +154,19 @@ class ProductosController extends Controller
     {
         //
 <<<<<<< HEAD
+<<<<<<< HEAD
         $p=Productos::find($id);
         $p->update($request->all());
         return redirect(route("productos"));
 =======
 >>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
+=======
+
+        $p=Productos::find($id);
+        $p->update($request->all());
+        return redirect(route("productos"));
+
+>>>>>>> 5967af7 (Avances  Factura)
     }
 
     /**
@@ -165,9 +179,16 @@ class ProductosController extends Controller
     {
         //
 <<<<<<< HEAD
+<<<<<<< HEAD
         Productos::destroy($id);
         return redirect(route("productos"));
 =======
 >>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
+=======
+
+        Productos::destroy($id);
+        return redirect(route("productos"));
+
+>>>>>>> 5967af7 (Avances  Factura)
     }
 }

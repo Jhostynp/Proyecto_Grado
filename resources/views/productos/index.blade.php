@@ -4,11 +4,17 @@
 <div class="container">
 	<div class="col-md-12 text-white">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		<h1 style="font-family:algeria"> <img src="https://www.vichaunter.org/wp-content/uploads/2017/01/juegos-digitales-vs-copias-fisicas.jpg" width="180x"> Productos
 =======
 		<h1 style="font-family:algeria">Productos
 >>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
+=======
+
+
+		<h1 style="font-family:algeria"> <img src="https://www.vichaunter.org/wp-content/uploads/2017/01/juegos-digitales-vs-copias-fisicas.jpg" width="180x"> Productos
+>>>>>>> 5967af7 (Avances  Factura)
 <a href=" {{route('productos.create')}} " class="btn-primary btn-success btn text-white">Crear</a></h1>
 
 			<!-- <form class="" action="{{route('productos.search')}}" method="POST"> -->
@@ -31,6 +37,7 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<table class="table table-striped table-success table-sm table-bordered table-hover table align-middle  ">
 		  <thead class="thead-dark">
 		<th style="text-align:center;">#</th>
@@ -47,17 +54,37 @@
 		<th style="text-align:center;">Cantidad</th>
 		<th style="text-align:center;">Detalle</th>
 >>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
+=======
+	<table class="table table-striped table-success table-sm table-bordered table-hover table align-middle  ">
+
+		  <thead class="thead-dark">
+		<th style="text-align:center;">#</th>
+		<th style="text-align:center;">Fecha</th>
+		<th style="text-align:center;">Stock</th>
+		<th style="text-align:center;">Precio</th>
+		<th style="text-align:center;">Descripcion</th>
+
+>>>>>>> 5967af7 (Avances  Factura)
 
 		<th style="text-align:center;">Nombre</th>
 
 		<th style="text-align:center;">Categoria</th>
+<<<<<<< HEAD
 <<<<<<< HEAD
 		<th style="text-align:center;">Provedor</th>
 		<th style="text-align:center;"></th>
 =======
 		<th style="text-align:center;">Usuario</th>
 >>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
+=======
+>>>>>>> 5967af7 (Avances  Factura)
 
+		<th style="text-align:center;">Provedor</th>
+
+
+
+
+		<th style="text-align:center;"> </th>
 
 		
 @foreach($productos as $prod)
@@ -78,8 +105,15 @@
 
 =======
 
+<<<<<<< HEAD
 				<td style="text-align:center;">{{$prod->pro_descripcion}}</td>
 >>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
+=======
+      			<td style="text-align:center;">{{$prod->prod_precio}}$</td>
+
+                <td style="text-align:center;">{{$prod->pro_descripcion}}</td>
+
+>>>>>>> 5967af7 (Avances  Factura)
 
 
 				<td style="text-align:center;">{{$prod->pro_nombre}}</td>
