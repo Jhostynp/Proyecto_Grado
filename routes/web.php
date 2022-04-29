@@ -83,8 +83,14 @@ Route::post('/productos/store','ProductosController@store')->name('productos.sto
 
 Route::get('/productos/edit/{prod_id}','ProductosController@edit')->name('productos.edit');
 
+<<<<<<< HEAD
 Route::post('/productos/update/{prod_id}','ProductosController@update')->name('productos.update');
 
 Route::post('/productos/destroy/{prod_id}','ProductosController@destroy')->name('productos.destroy');
+=======
+Route::get('/productos/update/{prod_id}','ProductosController@update')->name('productos.uptade');
+
+Route::get('/productos/destroy/{prod_id}','ProductosController@destroy')->name('productos.destroy');
+>>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
 
 Route::post('/productos/search','ProductosController@index')->name('productos.search');  

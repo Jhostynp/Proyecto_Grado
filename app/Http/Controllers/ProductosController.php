@@ -89,7 +89,19 @@ class ProductosController extends Controller
         //
 
         $data=$request->all();
+<<<<<<< HEAD
          Productos::create($data);
+=======
+
+        
+
+
+
+
+         Productos::create($data);
+
+
+>>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
         return redirect(route("productos"));
     }
 
@@ -113,6 +125,7 @@ class ProductosController extends Controller
     public function edit($id)
     {
         //
+<<<<<<< HEAD
         $productos=Productos::find($id);
         $categorias=Categorias::all();
         $provedor=Provedor::all();
@@ -120,6 +133,8 @@ class ProductosController extends Controller
         ->with('productos',$productos)
         ->with('categorias',$categorias)
         ->with('provedor',$provedor);
+=======
+>>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
     }
 
     /**
@@ -132,9 +147,12 @@ class ProductosController extends Controller
     public function update(Request $request, $id)
     {
         //
+<<<<<<< HEAD
         $p=Productos::find($id);
         $p->update($request->all());
         return redirect(route("productos"));
+=======
+>>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
     }
 
     /**
@@ -146,7 +164,10 @@ class ProductosController extends Controller
     public function destroy($id)
     {
         //
+<<<<<<< HEAD
         Productos::destroy($id);
         return redirect(route("productos"));
+=======
+>>>>>>> 66d23b89b9037c5aa82070d119982e5b5cbe964b
     }
 }
