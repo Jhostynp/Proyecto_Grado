@@ -95,4 +95,7 @@ Route::get('/productos/destroy/{prod_id}','ProductosController@destroy')->name('
 
 Route::post('/productos/search','ProductosController@index')->name('productos.search');  
 
+
+Route::post('/facturas/detalle','FacturasController@detalle')->name('facturas.detalle');
+
 Route::resource('facturas','FacturasController');

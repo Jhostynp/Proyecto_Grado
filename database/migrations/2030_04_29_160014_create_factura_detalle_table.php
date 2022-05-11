@@ -15,6 +15,7 @@ class CreateFacturaDetalleTable extends Migration
     {
         Schema::create('factura_detalle', function (Blueprint $table) {
             $table->id('fad_id');
+            $table->foreignid('fac_id')->references('fac_id')->on('facturas');
             $table->foreignid('prod_id')->references('prod_id')->on('productos');
             $table->integer('fad_cantidad');
             $table->float('fad_vu');

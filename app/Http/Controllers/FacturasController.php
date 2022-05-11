@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use DB;
 use App\Facturas;
 use App\Clientes;
+use App\Detalle;
+use App\Productos;
 use Illuminate\Http\Request;
 
 class FacturasController extends Controller
@@ -16,7 +18,14 @@ class FacturasController extends Controller
     public function index()
     {
         //
-        return view('facturas.index');
+
+        $facturas=Facturas::all();
+        $clientes=clientes::all();
+
+        return view('facturas.index')
+        ->with('facturas',$facturas)       
+         ;
+
     }
 
     /**
@@ -27,9 +36,11 @@ class FacturasController extends Controller
     public function create()
     {
         //
-        $clientes=DB::select("SELECT * from clientes");
+        $productos=DB::select(" SELECT * from productos");
+        $clientes=clientes::all();
         return view('facturas.create')
-        ->with('clientes',$clientes);
+        ->with('clientes',$clientes)
+        ->with('productos',$productos);
 
     }
 
@@ -44,9 +55,8 @@ class FacturasController extends Controller
         //
 
         $data=$request->all();
-
-        Facturas::create($data);
-        return redirect(route("productos"));
+        $facturas=Facturas::create($data);
+        return redirect(route('facturas.edit',$facturas->fac_id));
     }
 
     /**
@@ -68,19 +78,34 @@ class FacturasController extends Controller
      */
     public function edit($id)
     {
+
+
         //
+        $facturas=Facturas::find($id);
+        $productos=Productos::all();
+        $clientes=Clientes::all();
+        $detalle=DB::select("
+            SELECT * FROM factura_detalle fd 
+            JOIN productos p 
+            ON fd.prod_id=p.prod_id
+            WHERE fd.fac_id=$id 
+            ");
+        return view('facturas.edit')
+            ->with('facturas',$facturas)
+            ->with('productos',$productos)
+            ->with('detalle',$detalle)
+            ->with('clientes',$clientes);
+            // ;
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+        $fac=facturas::find($id);
+        $fac->update($request->all());
+        return redirect(route('facturas.update'));
+
     }
 
     /**
@@ -92,5 +117,16 @@ class FacturasController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function detalle(Request $req){
+        //
+        $datos=$req->all();
+        $datos['fad_vt']=0;
+        $fac_id=$datos['fac_id'];
+        Detalle::create($datos);
+         return redirect(route('facturas.edit',$fac_id));
+    
     }
 }
