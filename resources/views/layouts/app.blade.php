@@ -19,11 +19,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body style="background:#2C3333">
+<body style="background:#161925">
     <div id="app">
-        <nav class="navbar navbar-expand navbar-light shadow-sm text-white" style="background:#2666CF;" >
+        <nav class="navbar navbar-expand navbar-light shadow-sm text-white" style="background:#23395B;" >
             <div class="container text-white" >
                 
                 @guest

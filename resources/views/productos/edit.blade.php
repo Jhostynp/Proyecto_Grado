@@ -1,31 +1,33 @@
 @extends('layouts.app')
 @section('content')
 
+<script src="{{asset('js/productos.js')}}"> </script>
+
 <div class="container col-md-6" >
 	<div class="card-body card text-white text-white " style="margin-top: 0%;background:#251D3A;">
-		<h3 style="font-family:algeria;text-align: center;"><img src="https://cdn-icons-png.flaticon.com/512/2422/2422612.png" width="40px"> Registro de Productos</h3>
+		<h3 style="font-family:algeria;text-align: center;"><img src="https://cdn-icons-png.flaticon.com/512/2422/2422612.png" width="40px"> Editor de Productos</h3>
 
-<form action="{{route('productos.update',$productos->prod_id)}}" method="POST" onsubmit="return valida() ">
+<form action="{{route('productos.update',$productos->prod_id)}}" method="POST" onsubmit="return validarprodu() ">
 	@csrf
 				<div class="form-group">
 
 	<label for="">Nombre Del VideoJuego:</label>
-<input class="form-control" name="pro_nombre" value="{{$productos->pro_nombre}}" id="pro_nombre" placeholder="Escriba el nombre del producto">
+<input class="form-control" name="pro_nombre" value="{{$productos->pro_nombre}}" id="pro_nombre" placeholder="Escriba el nombre del producto" onkeypress="return soloLetras(event)">
  </div>
 
 				<div class="form-group">
 <label for="">Descripcion:</label>
-	<input class="form-control" name="pro_descripcion" value="{{$productos->pro_descripcion}}" id="pro_descripcion" placeholder="Escriba la Descripcion">
+	<input class="form-control" name="pro_descripcion" value="{{$productos->pro_descripcion}}" id="pro_descripcion" placeholder="Escriba la Descripcion" onkeypress="return soloLetras(event)">
   				</div>
 
   							<div class="form-group">
 <label for="">Stock:</label>
-	<input class="form-control" name="prod_stock" value="{{$productos->prod_stock}}" id="prod_stock" placeholder="Escriba el stock del producto">
+	<input class="form-control" name="prod_stock" value="{{$productos->prod_stock}}" id="prod_stock" placeholder="Escriba el stock del producto" onkeypress="return solonumeros(event)">
   				</div>
 
   				  							<div class="form-group">
 <label for="">Precio:</label>
-	<input class="form-control" name="prod_precio" value="{{$productos->prod_precio}}" id="prod_precio" placeholder="Escriba el precio del producto">
+	<input class="form-control" name="prod_precio" value="{{$productos->prod_precio}}" id="prod_precio" placeholder="Escriba el precio del producto" onkeypress="return solonumeros(event)">
   				</div>
 
 
@@ -77,4 +79,49 @@
 		</form> 
 	</div>
 </div>	
+
+
+{{-- SOLO LETRAS --}}
+<script>
+  function soloLetras(e) {
+    var key = e.keyCode || e.which,
+      tecla = String.fromCharCode(key).toLowerCase(),
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
+      especiales = [8, 37, 39, 46],
+      tecla_especial = false;
+
+    for (var i in especiales) {
+      if (key == especiales[i]) {
+        tecla_especial = true;
+        break;
+      }
+    }
+
+    if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+      return false;
+    }
+  }
+</script>
+
+{{-- SOLO NUMEROS --}}
+<script>
+    function solonumeros(e){
+        key=e.keyCode || e.which;
+        teclado=String.fromCharCode(key);
+        numeros="0123456789";
+        especiales="8-37-38-46";//array
+        teclado_especial=false;
+        for(var i in especiales){
+            if (key==especiales[i]) {
+                teclado_especial=true;
+            }
+        }
+        if (numeros.indexOf(teclado)==-1 && !teclado_especial) {
+            return false;
+        }
+    }
+</script>
+
+
+
 @endsection

@@ -22,8 +22,8 @@ class ProductosController extends Controller
 
         //$data=$request->all();
 
-        $desde=date('Y-m-d');
-        $hasta=date('Y-m-d');
+        // $desde=date('Y-m-d');
+        // $hasta=date('Y-m-d');
 
            // if (isset($data['desde'])) {
            //      $desde=$data['desde'];
@@ -36,7 +36,7 @@ class ProductosController extends Controller
             SELECT * FROM productos p
                 JOIN categorias c ON p.cat_id=c.cat_id 
               JOIN provedor r ON p.prov_id=r.prov_id
-            -- WHERE p.prod_fecha BETWEEN '$desde' AND '$hasta'
+
        
             ");  
 
@@ -94,7 +94,7 @@ class ProductosController extends Controller
 
          Productos::create($data);
 
-        return redirect(route("productos"));
+        return redirect(route("productos"))->with('Agregado','Si');  
     }
 
     /**
@@ -147,7 +147,7 @@ class ProductosController extends Controller
 
         $p=Productos::find($id);
         $p->update($request->all());
-        return redirect(route("productos"));
+        return redirect(route("productos"))->with('Actualizado','Si');
 
 
     }
@@ -164,8 +164,6 @@ class ProductosController extends Controller
 
         Productos::destroy($id);
         return redirect(route("productos"));
-
-
 
 
 

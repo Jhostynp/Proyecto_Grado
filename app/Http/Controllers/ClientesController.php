@@ -41,7 +41,7 @@ class ClientesController extends Controller
         //
         $data=$request->all();
         Clientes::create($data);
-        return redirect(route("clientes"));
+        return redirect(route("clientes"))->with('Agregado','Si');
     }
 
     /**
@@ -81,7 +81,7 @@ class ClientesController extends Controller
         //
         $clie=Clientes::find($id);
          $clie->update($request->all());
-         return redirect(route("clientes"));
+         return redirect(route("clientes"))->with('Actualizado','Si');
     }
 
     /**
@@ -94,6 +94,6 @@ class ClientesController extends Controller
     {
         //
                 Clientes::destroy($id);
-        return redirect(route("clientes"));
+        return redirect(route("clientes"))->with('Eliminado','Si');
     }
 }

@@ -54,4 +54,31 @@
 	</table>
 	</div>
 </div>	
+
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if(session('Agregado') == 'Si')
+        <script>
+          Swal.fire(
+                        'Client@ Agregad@ Correctamente',
+                        ' ',
+                        'success'
+                      )
+        </script>
+     @elseif(session('Actualizado') == 'Si')
+   <script>
+      Swal.fire(
+                    'Client@ Agregad@ Correctamente',
+                    ' ',
+                    'success'
+                  )
+    </script>
+    @elseif(session('Eliminado') == 'Si')
+    <script>
+      Swal.fire(
+                    'Categoria Eliminada Correctamente',
+                    ' ',
+                    'success'
+                  )
+    </script>
+    @endif
 @endsection

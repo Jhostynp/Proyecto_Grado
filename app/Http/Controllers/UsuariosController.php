@@ -40,7 +40,7 @@ class UsuariosController extends Controller
     {
         $data=$request->all();
         User::create($data);
-        return redirect(route("usuarios"));
+        return redirect(route("usuarios"))->with('Agregado','Si');
     }
 
     /**
@@ -80,7 +80,7 @@ class UsuariosController extends Controller
         //
         $us=User::find($id);
          $us->update($request->all());
-         return redirect(route("usuarios"));
+         return redirect(route("usuarios"))->with('Actualizado','Si');
     }
 
     /**
@@ -93,7 +93,9 @@ class UsuariosController extends Controller
     {
         //
         User::destroy($id);
-        return redirect(route("usuarios"));
+        return redirect(route("usuarios"))->with('Eliminado','Si');
         //dd("listo para eliminar");
     }
 }
+
+

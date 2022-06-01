@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 Use App\Categorias;
 use Illuminate\Http\Request;
+use DB;
 
 class CategoriasController extends Controller
 {
@@ -39,7 +40,7 @@ class CategoriasController extends Controller
     {
         $data=$request->all();
         Categorias::create($data);
-        return redirect(route("categorias"));
+        return redirect(route("categorias"))->with('Agregado','Si');
     }
 
     /**
@@ -81,7 +82,7 @@ class CategoriasController extends Controller
 
          $c=Categorias::find($id);
          $c->update($request->all());
-         return redirect(route("categorias"));
+         return redirect(route("categorias"))->with('Actualizado','Si');
 
 
     }
@@ -92,11 +93,26 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+        public function destroy($id)
     {
         //
-        Categorias::destroy($id);
-        return redirect(route("categorias"));
-        //dd("listo para eliminar");
+        $productos=DB::select("SELECT * FROM productos WHERE cat_id=$id");
+
+        if(empty($productos)){
+$sms="Eliminado Correctamente";
+Categorias::destroy($id);
+        }else{
+
+            $sms="No se puede eliminar ya que tiene productos en uso";
+
+        }
+    
+echo "<h1 style='background:red;color:white'>
+$sms
+<a href='".route('categorias')."'>Volver a categorias</a>
+
+</h1>";
+
+
     }
 }

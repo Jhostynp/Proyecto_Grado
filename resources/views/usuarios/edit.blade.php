@@ -35,4 +35,30 @@
         </form> 
     </div>
 </div>  
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if(session('Agregado') == 'Si')
+        <script>
+          Swal.fire(
+                        'Usuario Agregado Correctamente',
+                        ' ',
+                        'success'
+                      )
+        </script>
+     @elseif(session('Actualizado') == 'Si')
+   <script>
+      Swal.fire(
+                    'Usuario Actualizado Correctamente',
+                    ' ',
+                    'success'
+                  )
+    </script>
+    @elseif(session('Eliminado') == 'Si')
+    <script>
+      Swal.fire(
+                    'Usuario Eliminado Correctamente',
+                    ' ',
+                    'success'
+                  )
+    </script>
+    @endif
 @endsection

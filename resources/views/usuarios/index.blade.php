@@ -1,8 +1,10 @@
+
 @extends('layouts.app')
 @section('content')
 <div class="container">
 	<div class="col-md-12 text-light">
 	<h1 style="font-family:algeria">
+			<img src="https://c.tenor.com/yTHoLS82szwAAAAM/pato-girando.gif" width="100px">
 		Lista De Usuarios
 	<a href="{{route('usuarios.create')}}" class="btn btn-success text-light">Crear </a></h1>
 	
@@ -54,5 +56,32 @@
 		@endforeach
 	</table>
 	</div>
-</div>	
+</div>
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if(session('Agregado') == 'Si')
+        <script>
+          Swal.fire(
+                        'Usuario Agregado Correctamente',
+                        ' ',
+                        'success'
+                      )
+        </script>
+     @elseif(session('Actualizado') == 'Si')
+   <script>
+      Swal.fire(
+                    'Usuario Actualizado Correctamente',
+                    ' ',
+                    'success'
+                  )
+    </script>
+    @elseif(session('Eliminado') == 'Si')
+    <script>
+      Swal.fire(
+                    'Usuario Eliminado Correctamente',
+                    ' ',
+                    'success'
+                  )
+    </script>
+    @endif
+	
 @endsection

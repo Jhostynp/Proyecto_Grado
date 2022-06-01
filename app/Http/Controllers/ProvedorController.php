@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Provedor;
+use DB;
+use App\Productos;
 
 class ProvedorController extends Controller
 {
@@ -16,8 +18,10 @@ class ProvedorController extends Controller
     {
                 //
         $provedor=Provedor::all();
+        $productos=Productos::all();
         return view('provedor.index')
-        ->with('provedor',$provedor);
+        ->with('provedor',$provedor)
+        ->with('productos',$productos);
     }
 
     /**
@@ -43,7 +47,7 @@ class ProvedorController extends Controller
         //
         $data=$request->all();
         Provedor::create($data);
-        return redirect(route("provedor"));        
+        return redirect(route("provedor"))->with('Agregado','Si');        
     }
 
     /**
@@ -84,7 +88,7 @@ class ProvedorController extends Controller
         //
         $prov=Provedor::find($id);
          $prov->update($request->all());
-         return redirect(route("provedor"));
+         return redirect(route("provedor"))->with('Actualizado','Si');
     }
 
     /**
@@ -96,7 +100,30 @@ class ProvedorController extends Controller
     public function destroy($id)
     {
         //
-        Provedor::destroy($id);
-        return redirect(route("provedor"));
+        $productos=DB::select("SELECT * FROM productos WHERE prov_id=$id");
+
+        if(empty($productos)){
+$sms="Eliminado Correctamente";
+Provedor::destroy($id);
+        }else{
+
+            $sms="No se puede eliminar ya que tiene productos en uso";
+
+        }
+    
+echo "<h1 style='background:red;color:white'>
+$sms
+<a href='".route('provedor')."'>Volver a clientes</a>
+
+</h1>";
+
+
     }
+
+
+
+
+
+
+
 }

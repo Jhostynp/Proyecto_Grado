@@ -56,5 +56,32 @@
 		@endforeach
 	</table>
 	</div>
-</div>	
+</div>
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if(session('Agregado') == 'Si')
+        <script>
+          Swal.fire(
+                        'Provedor Agregado Correctamente',
+                        ' ',
+                        'success'
+                      )
+        </script>
+     @elseif(session('Actualizado') == 'Si')
+   <script>
+      Swal.fire(
+                    'Provedor Actualizado Correctamente',
+                    ' ',
+                    'success'
+                  )
+    </script>
+    @elseif(session('Nborrar') == 'Nb')
+    <script>
+      Swal.fire(
+                    'No se puede Eliminar',
+                    'Este provedor se esta utilizando ',
+                    'info'
+                  )
+    </script>
+    @endif
+
 @endsection

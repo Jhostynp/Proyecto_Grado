@@ -90,12 +90,27 @@ Route::post('/productos/destroy/{prod_id}','ProductosController@destroy')->name(
 
 Route::get('/productos/update/{prod_id}','ProductosController@update')->name('productos.uptade');
 
-Route::get('/productos/destroy/{prod_id}','ProductosController@destroy')->name('productos.destroy');
+Route::post('/productos/destroy/{prod_id}','ProductosController@destroy')->name('productos.destroy');
 
 
 Route::post('/productos/search','ProductosController@index')->name('productos.search');  
 
 
+
+
+
 Route::post('/facturas/detalle','FacturasController@detalle')->name('facturas.detalle');
 
+
+
+Route::post('/facturas/destroy/{fac_id}','FacturasController@destroy')->name('facturas.destroy');
+
 Route::resource('facturas','FacturasController');
+
+Route::get('/facturas_pdf/{fac_id}','FacturasController@facturas_pdf')->name('facturas.pdf');
+
+Route::get('/facturas_anular/{fac_id}','FacturasController@facturas_anular')->name('facturas.anular');
+
+Route::get('/facturas_desanular/{fac_id}','FacturasController@facturas_desanular')->name('facturas.desanular');
+
+Route::post('/facturas/search','FacturasController@index')->name('facturas.search');  

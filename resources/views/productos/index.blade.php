@@ -37,8 +37,10 @@
 		<th style="text-align:center;">#</th>
 		<th style="text-align:center;">Fecha</th>
 		<th style="text-align:center;">Stock</th>
-		<th style="text-align:center;">Precio</th>
 		<th style="text-align:center;">Descripcion</th>
+
+		<th style="text-align:center;">Precio</th>
+
 
 
 		<th style="text-align:center;">Nombre</th>
@@ -70,16 +72,14 @@
 
 
 
-			
+		
 
-				<td style="text-align:center;">{{$prod->pro_descripcion}}</td>
 
-      			<td style="text-align:center;">{{$prod->prod_precio}}$</td>
 
                 <td style="text-align:center;">{{$prod->pro_descripcion}}</td>
 
 
-
+      			<td style="text-align:center;">{{$prod->prod_precio}}$</td>
 
 				<td style="text-align:center;">{{$prod->pro_nombre}}</td>
 
@@ -118,17 +118,38 @@
 			</tr>
 			
 	@endforeach
-	
+
 	
 	</div>
 </div>	
 
 
-
-
-
-
-
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if(session('Agregado') == 'Si')
+        <script>
+          Swal.fire(
+                        'Productos Agregado Correctamente',
+                        ' ',
+                        'success'
+                      )
+        </script>
+     @elseif(session('Actualizado') == 'Si')
+   <script>
+      Swal.fire(
+                    'Productos Actualizado Correctamente',
+                    ' ',
+                    'success'
+                  )
+    </script>
+    @elseif(session('Eliminado') == 'Si')
+    <script>
+      Swal.fire(
+                    'Productos Eliminado Correctamente',
+                    ' ',
+                    'success'
+                  )
+    </script>
+    @endif
 
 
 
