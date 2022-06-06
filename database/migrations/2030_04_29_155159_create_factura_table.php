@@ -13,7 +13,11 @@ class CreateFacturaTable extends Migration
      */
     public function up()
     {
+<<<<<<< HEAD
         Schema::create('facturas', function (Blueprint $table) {
+=======
+        Schema::create('factura', function (Blueprint $table) {
+>>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
             $table->id('fac_id');
             $table->foreignid('cli_id')->references('cli_id')->on('clientes');
             $table->string('fac_no');
@@ -21,7 +25,11 @@ class CreateFacturaTable extends Migration
             $table->float('fac_total');
             $table->float('fac_iva');
             $table->float('fac_descuento');///PORCENTAJE
+<<<<<<< HEAD
             $table->string('fac_observaciones')->nullable();
+=======
+            $table->string('fac_observaciones');
+>>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 
             $table->integer('fac_estado')->default(1); //1_activo-0_anulado
             
@@ -36,6 +44,10 @@ class CreateFacturaTable extends Migration
      */
     public function down()
     {
+<<<<<<< HEAD
         Schema::dropIfExists('facturas');
+=======
+        Schema::dropIfExists('factura');
+>>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
     }
 }

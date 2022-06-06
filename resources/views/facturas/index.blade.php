@@ -4,6 +4,7 @@
 <div class="container">
 	<div class="col-md-12 text-white">
 
+<<<<<<< HEAD
 
 
 		<h1 style="font-family:algeria"> <img src="https://www.vichaunter.org/wp-content/uploads/2017/01/juegos-digitales-vs-copias-fisicas.jpg" width="180x"> Facturas
@@ -132,4 +133,11 @@
 
 
 	
+=======
+		<h1 style="font-family:algeria"> FACTURACION
+<a href=" {{route('facturas.create')}} " class="btn-primary btn-success btn text-white"> Crear</a></h1>
+
+</div>
+</div>
+>>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 @endsection

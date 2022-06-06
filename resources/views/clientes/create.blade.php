@@ -1,10 +1,18 @@
 P@extends('layouts.app')
 @section('content')
+<<<<<<< HEAD
 <script src="{{asset('js/clientes.js')}}"> </script>
 <div class="container col-md-6" >
     <div class="card-body card text-white text-white " style="margin-top: 0%;background:#251D3A;">
         <h3 style="font-family:algeria;text-align: center;"><img src="https://cdn-icons-png.flaticon.com/512/2422/2422612.png" width="40px"> Registro de Clientes</h3>
 <form action="{{route('clientes.store')}}" method="POST" onsubmit="return valid()">
+=======
+<script src="{{asset('js/users.js')}}"> </script>
+<div class="container col-md-6" >
+    <div class="card-body card text-white text-white " style="margin-top: 0%;background:#251D3A;">
+        <h3 style="font-family:algeria;text-align: center;"><img src="https://cdn-icons-png.flaticon.com/512/2422/2422612.png" width="40px"> Registro de Clientes</h3>
+<form action="{{route('clientes.store')}}" method="POST" onsubmit="return vali()">
+>>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 @csrf
                 <div class="form-group">
 

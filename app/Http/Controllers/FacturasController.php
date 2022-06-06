@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+<<<<<<< HEAD
 
 use Illuminate\Http\Request;
 use App\Facturas;
@@ -9,6 +10,12 @@ use App\Clientes;
 use DB;
 use PDF;
 use Auth;
+=======
+use DB;
+use App\Facturas;
+use App\Clientes;
+use Illuminate\Http\Request;
+>>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 
 class FacturasController extends Controller
 {
@@ -17,6 +24,7 @@ class FacturasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function index(Request $request)
     {
         //
@@ -86,6 +94,12 @@ SELECT * FROM factura_detalle f
         ->with('hasta',$hasta);
 
 
+=======
+    public function index()
+    {
+        //
+        return view('facturas.index');
+>>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
     }
 
     /**
@@ -97,11 +111,17 @@ SELECT * FROM factura_detalle f
     {
         //
         $clientes=DB::select("SELECT * from clientes");
+<<<<<<< HEAD
         $productos=DB::select("SELECT * from productos");
         return view('facturas.create')
         ->with('clientes',$clientes)
         ->with('productos',$productos)
         ;
+=======
+        return view('facturas.create')
+        ->with('clientes',$clientes);
+
+>>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
     }
 
     /**
@@ -113,10 +133,18 @@ SELECT * FROM factura_detalle f
     public function store(Request $request)
     {
         //
+<<<<<<< HEAD
         $data=$request->all();
         $facturas=Facturas::create($data);
         return redirect(route('facturas.edit',$facturas->fac_id));
 
+=======
+
+        $data=$request->all();
+
+        Facturas::create($data);
+        return redirect(route("productos"));
+>>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
     }
 
     /**
@@ -138,6 +166,7 @@ SELECT * FROM factura_detalle f
      */
     public function edit($id)
     {
+<<<<<<< HEAD
         $facturas=Facturas::find($id);
         $clientes=DB::select("SELECT * from clientes");
         $productos=DB::select("SELECT * from productos");
@@ -150,6 +179,9 @@ SELECT * FROM factura_detalle f
         ->with('productos',$productos)
         ->with('detalle',$detalle)
         ;
+=======
+        //
+>>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
     }
 
     /**
@@ -173,6 +205,7 @@ SELECT * FROM factura_detalle f
     public function destroy($id)
     {
         //
+<<<<<<< HEAD
          Facturas::destroy($id);
         return redirect(route("facturas"));
     }
@@ -235,3 +268,7 @@ SELECT * FROM factura_detalle f
 
 
 
+=======
+    }
+}
+>>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
