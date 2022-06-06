@@ -158,13 +158,25 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+        public function destroy($id)
     {
         //
+        $productos=DB::select("SELECT * FROM factura_detalle WHERE prod_id=$id");
 
-        Productos::destroy($id);
-        return redirect(route("productos"));
+        if(empty($productos)){
+$sms="Eliminado Correctamente";
+Productos::destroy($id);
+        }else{
 
+            $sms="No se puede eliminar ya que tiene una factura en uso";
+
+        }
+    
+echo "<h1 style='background:red;color:white'>
+$sms
+<a href='".route('productos')."'>Volver a categorias</a>
+
+</h1>";
 
 
     }

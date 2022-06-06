@@ -1,4 +1,4 @@
-@extends('layouts.app')
+P@extends('layouts.app')
 @section('content')
 <script src="{{asset('js/clientes.js')}}"> </script>
 <div class="container col-md-6" >

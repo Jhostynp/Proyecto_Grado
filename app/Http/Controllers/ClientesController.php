@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 Use App\Clientes;
 use Illuminate\Http\Request;
+use DB;
 
 class ClientesController extends Controller
 {
@@ -90,10 +91,26 @@ class ClientesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+        public function destroy($id)
     {
         //
-                Clientes::destroy($id);
-        return redirect(route("clientes"))->with('Eliminado','Si');
+        $clientes=DB::select("SELECT * FROM facturas WHERE cli_id=$id");
+
+        if(empty($clientes)){
+$sms="Eliminado Correctamente";
+Clientes::destroy($id);
+        }else{
+
+            $sms="No se puede eliminar ya que tiene una factura en uso";
+
+        }
+    
+echo "<h1 style='background:red;color:white'>
+$sms
+<a href='".route('clientes')."'>Volver a categorias</a>
+
+</h1>";
+
+
     }
 }

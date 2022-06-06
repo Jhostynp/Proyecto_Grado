@@ -142,7 +142,7 @@ if (isset($facturas)) {
                     
 <input type="hidden" name="fac_id" id="fac_id " value="{{$fac_id}}">
 
-<input type="number" name="fad_cantidad" id="fad_cantidad" style="width:80px;" class="form-control" required>
+<input type="number" name="fad_cantidad" value="0" id="fad_cantidad" style="width:80px;" class="form-control" required>
 
 </td>
 
@@ -155,7 +155,7 @@ if (isset($facturas)) {
 
 
  <td>
-<select name="prod_id" required id="prod_id" style="width: 200px;" class="form-control" required>
+<select name="prod_id" required id="prod_id"  value="" style="width: 200px;" class="form-control" required>
 
       @foreach($productos as $p)
   <option value="{{$p->prod_id}}">{{$p->pro_nombre}}</option>
@@ -177,14 +177,14 @@ if (isset($facturas)) {
 
 <td>
                     
-<input type="number"  name="fad_vu" id="fad_vu"  style="width:100px;" class="form-control" required>
+<input type="number"  name="fad_vu" id="fad_vu"  value="" style="width:100px;" class="form-control" required>
 
 </td>
 
 
 <td>
                     
-<input  type="number" name="fad_vt" id="fad_vt"  style="width:100px;" class="form-control">
+<input  type="number" name="fad_vt" id="fad_vt"  value="" style="width:100px;" class="form-control">
 
 </td>
 
