@@ -1,27 +1,19 @@
 @extends('layouts.app')
 @section('content')
 
-<<<<<<< HEAD
+
 <script src="{{asset('js/productos.js')}}"> </script>
-=======
 
 <div class="container col-md-6" >
 	<div class="card-body card text-white text-white " style="margin-top: 0%;background:#251D3A;">
 		<h3 style="font-family:algeria;text-align: center;"><img src="https://cdn-icons-png.flaticon.com/512/2422/2422612.png" width="40px"> Registro de Productos</h3>
 
 
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
-
-<div class="container col-md-6" >
-	<div class="card-body card text-white text-white " style="margin-top: 0%;background:#251D3A;">
-		<h3 style="font-family:algeria;text-align: center;"><img src="https://cdn-icons-png.flaticon.com/512/2422/2422612.png" width="40px"> Registro de Productos</h3>
 
 
 <form action="{{route('productos.store')}}" method="POST" onsubmit="return validarprodu() ">
 	@csrf
 
-
-<<<<<<< HEAD
 
 				<div class="form-group">
 	<label for="">Nombre Del VideoJuego:</label>
@@ -45,42 +37,14 @@
 
 	<input class="form-control" name="prod_stock" id="prod_stock" placeholder="Escriba el stock del producto" onkeypress="return solonumeros(event)">
 
-=======
-	<label for="">Nombre Del VideoJuego:</label>
-<input class="form-control" name="pro_nombre" id="pro_nombre" placeholder="Escriba el nombre del producto">
- </div>
 
-				<div class="form-group">
-<label for="">Descripcion:</label>
-	<input class="form-control" name="pro_descripcion" id="pro_descripcion" placeholder="Escriba la Descripcion">
+			
 
-
-  				</div>
-
-				
-
-  							<div class="form-group">
-<label for="">Stock:</label>
-
-	<input class="form-control" name="prod_stock" id="prod_stock" placeholder="Escriba el stock del producto">
-
-
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
-
-  				</div>
 
   				  							<div class="form-group">
 <label for="">Precio:</label>
 
-<<<<<<< HEAD
-
 	<input class="form-control" name="prod_precio" id="prod_precio" placeholder="Escriba el precio del producto" onkeypress="return solonumeros(event)">
-
-=======
-	<input class="form-control" name="prod_precio" id="prod_precio" placeholder="Escriba el precio del producto">
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
-
-
 
   				</div>
 
@@ -88,19 +52,12 @@
 
 	  			<div class="form-group">
 
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 		<label for="">Fecha De Ingreso:</label>
 	<input type="date" class="form-control" name="prod_fecha" id="prod_fecha" placeholder="Ingrese la fecha donde entra el producto">
 
 	
-
 	  			</div>
+
 
 <div class="form-group">
 
@@ -130,11 +87,7 @@
          @foreach($provedor as $p)
 
          <option value=" {{$p->prov_id}} "> {{$p->prov_nombre}} </option>
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 
          @endforeach
 

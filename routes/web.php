@@ -95,10 +95,6 @@ Route::post('/productos/destroy/{prod_id}','ProductosController@destroy')->name(
 
 Route::post('/productos/search','ProductosController@index')->name('productos.search');  
 
-<<<<<<< HEAD
-
-
-
 
 Route::post('/facturas/detalle','FacturasController@detalle')->name('facturas.detalle');
 
@@ -115,6 +111,3 @@ Route::get('/facturas_anular/{fac_id}','FacturasController@facturas_anular')->na
 Route::get('/facturas_desanular/{fac_id}','FacturasController@facturas_desanular')->name('facturas.desanular');
 
 Route::post('/facturas/search','FacturasController@index')->name('facturas.search');  
-=======
-Route::resource('facturas','FacturasController');
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701

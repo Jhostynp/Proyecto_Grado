@@ -5,14 +5,10 @@
 	<div class="col-md-12 text-white">
 
 
-<<<<<<< HEAD
 
 
 		<h1 style="font-family:algeria"> <img src="https://www.vichaunter.org/wp-content/uploads/2017/01/juegos-digitales-vs-copias-fisicas.jpg" width="180x"> Productos
 
-=======
-		<h1 style="font-family:algeria"> <img src="https://www.vichaunter.org/wp-content/uploads/2017/01/juegos-digitales-vs-copias-fisicas.jpg" width="180x"> Productos
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 <a href=" {{route('productos.create')}} " class="btn-primary btn-success btn text-white">Crear</a></h1>
 
 			<!-- <form class="" action="{{route('productos.search')}}" method="POST"> -->
@@ -32,29 +28,14 @@
 
 
 
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 	<table class="table table-striped table-success table-sm table-bordered table-hover table align-middle  ">
 
 		  <thead class="thead-dark">
 		<th style="text-align:center;">#</th>
 		<th style="text-align:center;">Fecha</th>
 		<th style="text-align:center;">Stock</th>
-<<<<<<< HEAD
-		<th style="text-align:center;">Descripcion</th>
-
-		<th style="text-align:center;">Precio</th>
-
-
-=======
 		<th style="text-align:center;">Precio</th>
 		<th style="text-align:center;">Descripcion</th>
-
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 
 		<th style="text-align:center;">Nombre</th>
 
@@ -65,14 +46,12 @@
 
 
 
-<<<<<<< HEAD
 
 
 
 
 
-=======
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
+
 		<th style="text-align:center;"> </th>
 
 		
@@ -86,26 +65,11 @@
 
       			<td style="text-align:center;">{{$prod->prod_stock}}</td>
 
-
-<<<<<<< HEAD
-=======
       			<td style="text-align:center;">{{$prod->prod_precio}}$</td>
 
                 <td style="text-align:center;">{{$prod->pro_descripcion}}</td>
-
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
-
-		
-
-
-
-                <td style="text-align:center;">{{$prod->pro_descripcion}}</td>
-
-
-      			<td style="text-align:center;">{{$prod->prod_precio}}$</td>
 
 				<td style="text-align:center;">{{$prod->pro_nombre}}</td>
-
 
 				<td style="text-align:center;">{{$prod->cat_nombre}}</td>
 
@@ -160,14 +124,6 @@
    <script>
       Swal.fire(
                     'Productos Actualizado Correctamente',
-                    ' ',
-                    'success'
-                  )
-    </script>
-    @elseif(session('Eliminado') == 'Si')
-    <script>
-      Swal.fire(
-                    'Productos Eliminado Correctamente',
                     ' ',
                     'success'
                   )

@@ -45,6 +45,7 @@ class ProvedorController extends Controller
     public function store(Request $request)
     {
         //
+        
         $data=$request->all();
         Provedor::create($data);
         return redirect(route("provedor"))->with('Agregado','Si');        

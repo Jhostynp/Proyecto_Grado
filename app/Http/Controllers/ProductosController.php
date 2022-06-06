@@ -90,17 +90,17 @@ class ProductosController extends Controller
 
         $data=$request->all();
 
-<<<<<<< HEAD
+
 
 
          Productos::create($data);
 
         return redirect(route("productos"))->with('Agregado','Si');  
-=======
+
          Productos::create($data);
 
         return redirect(route("productos"));
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
+
     }
 
     /**
@@ -124,11 +124,7 @@ class ProductosController extends Controller
     {
         //
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
         $productos=Productos::find($id);
         $categorias=Categorias::all();
         $provedor=Provedor::all();
@@ -137,11 +133,7 @@ class ProductosController extends Controller
         ->with('categorias',$categorias)
         ->with('provedor',$provedor);
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
     }
 
     /**
@@ -155,18 +147,18 @@ class ProductosController extends Controller
     {
         //
 
-<<<<<<< HEAD
+
 
 
         $p=Productos::find($id);
         $p->update($request->all());
         return redirect(route("productos"))->with('Actualizado','Si');
 
-=======
+
         $p=Productos::find($id);
         $p->update($request->all());
         return redirect(route("productos"));
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
+
 
     }
 
@@ -179,7 +171,7 @@ class ProductosController extends Controller
         public function destroy($id)
     {
         //
-<<<<<<< HEAD
+
         $productos=DB::select("SELECT * FROM factura_detalle WHERE prod_id=$id");
 
         if(empty($productos)){
@@ -193,15 +185,11 @@ Productos::destroy($id);
     
 echo "<h1 style='background:red;color:white'>
 $sms
-<a href='".route('productos')."'>Volver a categorias</a>
+<a href='".route('productos')."'>Volver a productos</a>
 
 </h1>";
 
-=======
 
-        Productos::destroy($id);
-        return redirect(route("productos"));
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 
     }
 }

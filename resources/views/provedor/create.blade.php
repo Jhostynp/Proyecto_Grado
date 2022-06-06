@@ -1,21 +1,13 @@
 @extends('layouts.app')
 @section('content')
-<<<<<<< HEAD
 <script src="{{asset('js/provedores.js')}}"> </script>
-=======
-<script src="{{asset('js/users.js')}}"> </script>
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 
 <div class="container col-md-6" >
     <div class="card-body card text-white text-white " style="margin-top: 0%;background:#251D3A;">
         <h3 style="font-family:algeria;text-align: center;"><img src="https://cdn-icons-png.flaticon.com/512/2422/2422612.png" width="40px"> Registro de Provedores</h3>
 
 
-<<<<<<< HEAD
 <form action="{{route('provedor.store')}}" method="POST" onsubmit="return validarprov()">
-=======
-<form action="{{route('provedor.store')}}" method="POST" onsubmit="return vali()">
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
 @csrf
                 <div class="form-group">
 
@@ -28,15 +20,8 @@
                 <div class="form-group">
                     <label for="">RUC: </label>
 
-<<<<<<< HEAD
          <input type="number" name="prov_ruc" id="prov_ruc" class="form-control" placeholder="Escriba su numero de Ruc" maxlength="10" onkeypress="return solonumeros(event)">
      
-=======
-                    <input type="text" name="prov_ruc" id="prov_ruc" class="form-control" placeholder="Escriba su numero de Ruc" maxlength="10">
-
-                    
-
->>>>>>> 5967af72b22685d6b2935f53f01dd7e6cf7bf701
                 </div>                
 
 
